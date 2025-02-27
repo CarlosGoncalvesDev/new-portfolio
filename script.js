@@ -76,3 +76,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
     typeEffect();
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const carousel = document.querySelector(".carousel");
+    const prevBtn = document.querySelector(".prev-btn");
+    const nextBtn = document.querySelector(".next-btn");
+
+    let index = 0;
+
+    function updateCarousel() {
+        const offset = -index * 100; // Move os itens horizontalmente
+        carousel.style.transform = `translateX(${offset}%)`;
+    }
+
+    nextBtn.addEventListener("click", () => {
+        index = (index + 1) % carousel.children.length;
+        updateCarousel();
+    });
+
+    prevBtn.addEventListener("click", () => {
+        index = (index - 1 + carousel.children.length) % carousel.children.length;
+        updateCarousel();
+    });
+});

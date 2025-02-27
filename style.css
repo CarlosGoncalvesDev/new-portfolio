@@ -661,6 +661,88 @@ footer ul li a {
     color: rgb(24, 23, 23);
 }
 
+/* Certificações */
+.certifications {
+    text-align: center;
+    padding: 8rem 12%;
+    background: white;
+    position: relative;
+}
+
+/* Ajusta o tamanho do carrossel */
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 500px;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Carrossel */
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Cada item do carrossel */
+.carousel-item {
+    min-width: 100%;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Botões arredondados */
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(to right, #009dff, #ff00ff);
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+    z-index: 10;
+    /* Garante que a seta fique visível sobre as imagens */
+}
+
+/* Ajustando a posição das setas */
+.prev-btn {
+    left: 10px;
+    /* Aproxima a seta da imagem */
+}
+
+.next-btn {
+    right: 10px;
+}
+
+/* Efeito hover na seta */
+.prev-btn i,
+.next-btn i {
+    font-size: 1.5rem;
+    color: white;
+    transition: transform 0.3s ease-in-out;
+}
+
+.prev-btn:hover i,
+.next-btn:hover i {
+    transform: scale(1.3);
+}
 
 @media (max-width: 768px) {
     header {
@@ -807,6 +889,24 @@ footer ul li a {
 
     .timeline-item.right {
         left: 0;
+    }
+
+    .carousel-container {
+        max-width: 300px;
+    }
+
+    .prev-btn,
+    .next-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .prev-btn {
+        left: 5px;
+    }
+
+    .next-btn {
+        right: 5px;
     }
 
 }
