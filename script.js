@@ -44,3 +44,35 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 2000);
     }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const textElement = document.querySelector(".typing-text");
+    const text = "Carlos Eduardo";
+    let index = 0;
+    let isDeleting = false;
+
+    function typeEffect() {
+        if (!isDeleting) {
+            textElement.innerHTML = text.substring(0, index) + "|";
+            index++;
+
+            if (index > text.length) {
+                setTimeout(() => {
+                    isDeleting = true;
+                }, 1000);
+            }
+        } else {
+            // Remove caracteres
+            textElement.innerHTML = text.substring(0, index) + "|";
+            index--;
+
+            if (index === 0) {
+                isDeleting = false;
+            }
+        }
+
+        setTimeout(typeEffect, isDeleting ? 100 : 250);
+    }
+
+    typeEffect();
+});

@@ -543,6 +543,125 @@ footer ul li a {
     }
 }
 
+.typing-text::after {
+    content: "|";
+    display: inline-block;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+
+.education {
+    padding: 8rem 12%;
+    background: white;
+    text-align: center;
+    position: relative;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, #ff00ff, #009dff);
+    box-shadow: 0 0 10px #ff00ff, 0 0 20px #009dff;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+
+/* Estilizando cada item da linha do tempo */
+.timeline-item {
+    position: relative;
+    width: 45%;
+    padding: 2rem;
+}
+
+.timeline-item.left {
+    text-align: right;
+    left: 0;
+}
+
+.timeline-item.right {
+    text-align: left;
+    left: 55%;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 100%;
+    width: 18px;
+    height: 18px;
+    background: #009dff;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #ff00ff, 0 0 30px #009dff;
+    transform: translateX(-50%);
+}
+
+.timeline-item.right::before {
+    left: -10px;
+}
+
+.timeline-content {
+    background: white;
+    border: 3px solid #009dff;
+    padding: 1.5rem;
+    border-radius: 50px;
+    /* Arredondamento das caixas */
+    box-shadow: 0 0 15px #ff00ff, 0 0 30px #009dff;
+    transition: 0.3s ease-in-out;
+}
+
+.timeline-content:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #ff00ff, 0 0 50px #009dff;
+}
+
+/* Data da experiência */
+.timeline-date {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #009dff;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* Títulos */
+.timeline-content h3 {
+    font-size: 1.8rem;
+    color: rgb(20, 20, 20);
+}
+
+.timeline-content h4 {
+    font-size: 1.4rem;
+    color: rgb(24, 23, 23);
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+/* Texto */
+.timeline-content p {
+    font-size: 1.2rem;
+    color: rgb(24, 23, 23);
+}
+
+
 @media (max-width: 768px) {
     header {
         gap: 1.5rem;
@@ -652,6 +771,42 @@ footer ul li a {
         border-radius: 3rem;
         display: block;
         margin: 0 auto;
+    }
+
+    .timeline {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        text-align: left;
+        padding-left: 40px;
+        /* Espaço para a linha */
+        position: relative;
+    }
+
+    .timeline-item::before {
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .timeline-content {
+        width: 90%;
+        /* Ajusta largura do bloco */
+        margin: 1rem auto;
+        border-radius: 50px;
+    }
+
+    .timeline-item.right {
+        left: 0;
     }
 
 }
